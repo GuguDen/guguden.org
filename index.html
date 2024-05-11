@@ -12,11 +12,12 @@
         flex-direction: column;
         height: 100vh;
         margin: 0;
-        background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        background: linear-gradient(120deg, #ffb9b9 0%, #aac1cd 100%);
+        position: relative; /* Add position relative to enable positioning of glider button */
     }
     #intro {
         font-size: 36px;
-        color: #ff1493; /* Pink color */
+        color: #ff0088; /* Pink color */
         text-align: center;
         text-transform: uppercase;
         text-shadow: 2px 2px 2px black;
@@ -50,6 +51,23 @@
     .button:hover {
         opacity: 0.8;
     }
+    /* Style for the glider button */
+    #glider {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff0088; /* Pink color */
+        color: white;
+        cursor: pointer;
+        z-index: 999; /* Ensure it's above other elements */
+    }
+    #glider:hover {
+        opacity: 0.8;
+    }
 </style>
 </head>
 <body>
@@ -66,6 +84,9 @@
         <p>For reading</p>
     </div>
 
+    <!-- Glider button -->
+    <button id="glider" onclick="goToGuguPage()">Glider</button>
+
     <script>
         function toggleCreatorInfo() {
             var creatorInfoDiv = document.getElementById("creator-info");
@@ -77,6 +98,10 @@
                 creatorInfoDiv.style.display = "none";
                 thankYouMessage.style.display = "none";
             }
+        }
+
+        function goToGuguPage() {
+            window.location.href = 'https://guguden.github.io/gugu/';
         }
     </script>
 </body>
