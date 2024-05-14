@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GuguDen</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        background-image: url(ai\ eye.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #intro {
+        font-size: 36px;
+        color: #ff0088; /* Pink color */
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 2px black;
+    }
+    .button {
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+        transition: all 0.3s ease;
+    }
+    .anime {
+        background-color: #ff6f61;
+        color: white;
+    }
+    .manga {
+        background-color: #5e72e4;
+        color: white;
+    }
+    .creator-info {
+        background-color: #2d98da;
+        color: white;
+    }
+    .thank-you {
+        font-size: 24px;
+        margin-top: 20px;
+        display: none;
+    }
+    .button:hover {
+        opacity: 0.8;
+    }
+    /* Style for the glider button */
+    #glider {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff0088; /* Pink color */
+        color: white;
+        cursor: pointer;
+        z-index: 999; /* Ensure it's above other elements */
+    }
+    #glider:hover {
+        opacity: 0.8;
+    }
+</style>
+</head>
+<body>
+    <h1 id="intro">GuguDen</h1>
+    <a href="https://hianime.to" target="_blank"><button class="button anime">Anime</button></a>
+    <a href="https://ww1.mangafreak.me/Read1_Cyborg_Jiichan_G_21" target="_blank"><button class="button manga">Manga</button></a>
+    <button class="button creator-info" onclick="toggleCreatorInfo()">Creator Info</button>
+
+    <div id="creator-info" style="display: none; text-align: center;">
+        <p>Creator Name: GuguDen</p>
+        <p>Creator Birthday: 6 September 2009</p>
+        <a href="https://www.instagram.com/gugu_den/" target="_blank"><button class="button">Creator Instagram</button></a>
+        <p class="thank-you">Thank You</p>
+        <p>For reading</p>
+    </div>
+
+    <!-- Glider button -->
+    <button id="glider" onclick="goToGuguPage()">Glider</button>
+
+    <script>
+        function toggleCreatorInfo() {
+            var creatorInfoDiv = document.getElementById("creator-info");
+            var thankYouMessage = document.querySelector(".thank-you");
+            if (creatorInfoDiv.style.display === "none") {
+                creatorInfoDiv.style.display = "block";
+                thankYouMessage.style.display = "block";
+            } else {
+                creatorInfoDiv.style.display = "none";
+                thankYouMessage.style.display = "none";
+            }
+        }
+
+        function goToGuguPage() {
+            window.location.href = 'https://guguden.github.io/gugu/';
+        }
+    </script>
+</body>
+</html>
